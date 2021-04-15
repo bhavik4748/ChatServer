@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "The Frontend take home project for DoorDash",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serve ./public",
-    "api-server": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "api-server": "node server.js",
+    "dev":"npm run api-server & npm run start",
+    "dev-windows":"start npm run api-server && start npm run start"
   },
   "engines": {
     "node": ">=7.0.0"
@@ -19,6 +24,31 @@
     "body-parser": "~1.0.1"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1",
     "shortid": "^2.2.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
