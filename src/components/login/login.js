@@ -1,16 +1,17 @@
 import classes from './login.module.css';
 
-export const Login = () => {
+export const Login = (props) => {
     return (
-        <form className={classes.login}>
+        <div className={classes.login}>
             <div>
-                <input type="text" placeholder="Type your username..." />
+                <input type="text" value={props.inputVal}
+                placeholder="Type your username..." onChange={props.changed} />
             </div>
             <div>
-                <button>Join the Doordash Chat!</button>
+                <button type="submit">Join the Doordash Chat!</button>
             </div>
 
-        </form>
+        </div>
     )
 }
 
