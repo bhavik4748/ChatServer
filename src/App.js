@@ -1,11 +1,19 @@
 import { useState } from 'react';
-import { Login } from './components/login/login'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+
+import { Login } from './components/login/login';
+import { Chat } from './components/chat/chat';
 
 
 import './App.css';
 
 function App() {
-  const [loginVal, setLoginVal] = useState('');
+  const [loginUser, setLoginUser] = useState('');
 
   const LoginHandler = (event) => {
     event.preventDefault();
@@ -13,14 +21,31 @@ function App() {
   }
 
   const changeHandler = (event) => {
-    setLoginVal(event.target.value);
+    setLoginUser(event.target.value);
   }
+
+  let login = (
+    <form onSubmit={LoginHandler}>
+      <Login inputVal={loginUser} changed={(event) => changeHandler(event)} />
+      <NavLink to='/chat'>chat</NavLink>
+    </form>
+  )
 
   return (
     <div className="App">
-      <form onSubmit={LoginHandler}>
-        <Login inputVal={loginVal} changed={(event) => changeHandler(event)} />
-      </form>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            {login}
+          </Route>
+          <Route path="/chat">
+            <Chat user={loginUser} />
+          </Route>
+          <Route path="*">
+            {login}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
