@@ -3,7 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
+  NavLink,
+  useHistory,
+  Redirect
 } from "react-router-dom";
 
 import { Login } from './components/login/login';
@@ -14,10 +16,12 @@ import './App.css';
 
 function App() {
   const [loginUser, setLoginUser] = useState('');
+  //let history = useHistory();
 
   const LoginHandler = (event) => {
     event.preventDefault();
-
+    // history.push('/chat')
+    return (<Redirect to='/chat' />)
   }
 
   const changeHandler = (event) => {

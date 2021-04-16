@@ -1,0 +1,12 @@
+.roomsTab {
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding:25px 20px;
+    /* justify-content: center; */
+}
+
+.roomsTab:hover {
+    background-color: #800d20;
+}

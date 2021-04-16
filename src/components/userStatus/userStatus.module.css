@@ -1,0 +1,14 @@
+.userHeader{
+    height: 100px;
+    padding:25px 20px;
+}
+.userLabel {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.statusLabel {
+    margin-top:5px;
+    font-size: 12px;
+
+}
