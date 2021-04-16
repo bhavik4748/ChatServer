@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouteMatch, NavLink } from 'react-router-dom';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 import classes from './rooms.module.css';
 
 export const Rooms = (props) => {

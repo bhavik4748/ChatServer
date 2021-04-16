@@ -35,6 +35,14 @@
     background-color: #800d20;
 }
 
+.selectRoom {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #696969;
+    font-size: 20px;
+}
+
 a {
     text-decoration: none;
 }

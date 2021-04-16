@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useInterval } from '../../services/shared'
+import { useInterval } from '../../../services/shared'
 import classes from './userStatus.module.css';
 
 export const UserStatus = (props) => {

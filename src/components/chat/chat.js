@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Switch, useRouteMatch, Route, NavLink } from 'react-router-dom';
 
-import { UserStatus } from '../userStatus/userStatus';
+import { UserStatus } from './userStatus/userStatus';
 //import { Rooms } from '../rooms/rooms';
 import { ChatWindow } from './chatWindow/chatWindow';
 import api from '../../services/api';
@@ -36,7 +36,7 @@ export const Chat = (props) => {
             </div>
             <Switch>
                 <Route exact path={path}>
-                    <h4>Please select a chat topic.</h4>
+                    <div className={classes.selectRoom}>Please select a chat room.</div>
                 </Route>
                 <Route path={`${path}/:roomId`}>
                     <ChatWindow userName={props.user} />
