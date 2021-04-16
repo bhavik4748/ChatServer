@@ -13,21 +13,26 @@ import './App.css';
 
 function App() {
   const [loginUser, setLoginUser] = useState('');
+  const [enteredUser, setEnteredUser] = useState('');
   let history = useHistory();
 
   const LoginHandler = (event) => {
     event.preventDefault();
-    history.push('/chat');
-    return;
+    if (enteredUser.trim().length > 0) {
+      setLoginUser(enteredUser.trim());
+      history.push('/chat');
+      return;
+    }
+    
   }
 
   const changeHandler = (event) => {
-    setLoginUser(event.target.value);
+    setEnteredUser(event.target.value);
   }
 
   let login = (
     <form onSubmit={LoginHandler}>
-      <Login inputVal={loginUser} changed={(event) => changeHandler(event)} />
+      <Login inputVal={enteredUser} changed={(event) => changeHandler(event)} />
     </form>
   )
 

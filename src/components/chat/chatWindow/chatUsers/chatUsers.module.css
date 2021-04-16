@@ -1,0 +1,15 @@
+.UserContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PrimaryUser {
+    color: #ff1940;
+    font-size: 16px;
+}
+
+.OtherUsers {
+    color: #696969;
+    font-size: 16px;
+}

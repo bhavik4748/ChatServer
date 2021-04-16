@@ -4,8 +4,7 @@ export const Login = (props) => {
     return (
         <div className={classes.login}>
             <div>
-                <input type="text" value={props.inputVal}
-                placeholder="Type your username..." onChange={props.changed} />
+                <input type="text" value={props.inputVal} maxLength="50" placeholder="Type your username..." onChange={props.changed} />
             </div>
             <div>
                 <button type="submit">Join the Doordash Chat!</button>

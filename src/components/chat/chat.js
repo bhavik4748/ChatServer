@@ -20,8 +20,8 @@ export const Chat = (props) => {
 
     let roomsDiv = rooms.map(x => {
         return (
-            <NavLink to={`${url}/${x.id}`} key={x.name}>
-                <div onClick={props.selectRoomHandler} className={classes.roomsTab} >
+            <NavLink to={`${url}/${x.id}`} key={x.name} className={classes.roomsTab} activeClassName="selected" >
+                <div onClick={props.selectRoomHandler}  >
                     {x.name}
                 </div>
             </NavLink>
@@ -31,7 +31,7 @@ export const Chat = (props) => {
     return (
         <div className={classes.ChatMainLayout}>
             <div className={classes.FixedLeftPanel} >
-                <UserStatus />
+                <UserStatus userName={props.user} />
                 {roomsDiv}
             </div>
             <Switch>
@@ -39,7 +39,7 @@ export const Chat = (props) => {
                     <h4>Please select a chat topic.</h4>
                 </Route>
                 <Route path={`${path}/:roomId`}>
-                    <ChatWindow />
+                    <ChatWindow userName={props.user} />
                 </Route>
             </Switch>
         </div>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { ChatUsers } from './chatUsers/chatUsers';
 import api from '../../../services/api';
 import classes from './chatWindow.module.css';
-
 
 export const ChatWindow = (props) => {
     let { roomId } = useParams();
@@ -20,10 +20,16 @@ export const ChatWindow = (props) => {
     }, [setChatRoomName, roomId, setChatUsers]);
     return (
         <div className={classes.chatWindow}>
-            <div className={classes.roomName}>
-            {chatRoomName}
+            <div className={classes.chatWindowHeader}>
+                <div className={classes.roomName}>
+                    {chatRoomName}
+                </div>
+                <ChatUsers primaryUsers={props.userName} otherUsers={chatUsers} />
             </div>
-            My custon chat window   {chatUsers}
+            <div className={classes.chatWindowChatter}>
+
+            </div>
+
         </div>
     )
 }

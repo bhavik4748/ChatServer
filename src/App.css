@@ -4,3 +4,7 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+.selected{
+  background-color: #800d20;
+}
