@@ -10,13 +10,31 @@
     height: 100vh;
     color: white;
     background-color: #ff1940;
-   
+
 }
 
 .ChatWindow {
     height: 100vh;
-    color:#696969;
+    color: #696969;
     background-color: white;
     width: 100%;
-    padding:25px 20px;
+    padding: 25px 20px;
+}
+
+.roomsTab {
+    color: white;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 25px 20px;
+    /* justify-content: center; */
+}
+
+.roomsTab:hover {
+    background-color: #800d20;
+}
+
+a {
+    text-decoration: none;
 }

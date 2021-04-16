@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  NavLink,
   useHistory,
-  Redirect
 } from "react-router-dom";
 
 import { Login } from './components/login/login';
@@ -16,12 +13,12 @@ import './App.css';
 
 function App() {
   const [loginUser, setLoginUser] = useState('');
-  //let history = useHistory();
+  let history = useHistory();
 
   const LoginHandler = (event) => {
     event.preventDefault();
-    // history.push('/chat')
-    return (<Redirect to='/chat' />)
+    history.push('/chat');
+    return;
   }
 
   const changeHandler = (event) => {
@@ -31,25 +28,22 @@ function App() {
   let login = (
     <form onSubmit={LoginHandler}>
       <Login inputVal={loginUser} changed={(event) => changeHandler(event)} />
-      <NavLink to='/chat'>chat</NavLink>
     </form>
   )
 
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            {login}
-          </Route>
-          <Route path="/chat">
-            <Chat user={loginUser} />
-          </Route>
-          <Route path="*">
-            {login}
-          </Route>
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/">
+          {login}
+        </Route>
+        <Route path="/chat">
+          <Chat user={loginUser} />
+        </Route>
+        <Route path="*">
+          {login}
+        </Route>
+      </Switch>
     </div>
   );
 }

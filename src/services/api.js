@@ -16,10 +16,18 @@ api.getRooms = async () => {
         console.log(err);
         throw (err);
     }
-
 }
 
-
+api.getRoomDetails = async (id) => {
+    try {
+        const res = await fetch(`${api.url}rooms/${id}`, api.headers);
+        const result = await res.json();
+        return result;
+    } catch (err) {
+        console.log(err);
+        throw (err);
+    }
+}
 
 
 export default api;

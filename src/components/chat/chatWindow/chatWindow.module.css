@@ -1,0 +1,11 @@
+.chatWindow{
+    width: 100%;
+}
+.roomName{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 30px;
+   color:#696969;
+   font-size: 20px;
+}
