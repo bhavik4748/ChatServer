@@ -29,8 +29,8 @@
 
 .msgBox .msg {
     background-color: white;
-    border-radius: 20px;
-    padding: 15px 20px;
+    border-radius: 25px;
+    padding: 10px 20px;
     margin: 10px 20px;
     flex-flow: wrap;
     display: inline-block;
@@ -52,17 +52,19 @@
 }
 
 .textArea {
-    width: 85%;
-    padding: 40px;
+    width: 90%;
+    padding: 30px;
 
 }
 
 .textArea textarea {
     width: 100%;
-    padding: 10px 0 0 10px;
+    padding: 15px 0 0 10px;
     resize: none;
     min-height: 25px;
-    border: 1px solid #e1e2e4;
+    border: 2px solid #e1e2e4;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .textArea textarea:focus {
