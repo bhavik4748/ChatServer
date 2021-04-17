@@ -12,6 +12,16 @@ Run following command
 
 In the project directory, you can run:
 
+### `npm run dev`
+
+Runs the Front-end app and backend api-server in Unix & Linux
+
+### `npm run dev-windows`
+
+Runs the Front-end app and backend api-server in Windows
+
+
+
 ### `npm start`
 
 Runs the Front-end app in the development mode.\
@@ -30,11 +40,5 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run dev`
 
-Runs the Front-end app and backend api-server in Unix & Linux
-
-### `npm run dev-windows`
-
-Runs the Front-end app and backend api-server in Windows
 
