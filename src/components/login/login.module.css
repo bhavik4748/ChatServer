@@ -23,4 +23,5 @@ button {
     color: white;
     background-color: #ff1940;
     border: none;
+    cursor: pointer;
 }

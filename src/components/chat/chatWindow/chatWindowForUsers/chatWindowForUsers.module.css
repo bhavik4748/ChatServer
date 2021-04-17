@@ -8,6 +8,8 @@
 .chatMessagesWindow {
     height: 80%;
     min-height: 100px;
+    overflow: auto;
+    padding: 5px 0;
 }
 
 .chatTextEnterWindow {
@@ -43,10 +45,15 @@
     color: #696969;
 }
 
+form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
 .textArea {
     width: 85%;
-    padding: 10px;
+    padding: 40px;
 
 }
 
@@ -67,4 +74,11 @@
     color: #4e92e3;
     cursor: pointer;
     width: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.overflowAuto {
+    overflow: auto;
+    height: 100%;
 }
