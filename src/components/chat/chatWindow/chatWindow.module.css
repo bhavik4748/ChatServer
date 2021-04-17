@@ -11,6 +11,7 @@
 }
 
 .chatWindowChatter {
+    position: relative;
     background-color: #eff1f2;
     height: 100%;
     border-top: 1px solid #eff1f2;

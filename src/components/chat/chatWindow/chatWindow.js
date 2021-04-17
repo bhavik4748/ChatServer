@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ChatUsers } from './chatUsers/chatUsers';
+import { ChatWindowForUsers } from './chatWindowForUsers/chatWindowForUsers';
 import api from '../../../services/api';
 import classes from './chatWindow.module.css';
 
 export const ChatWindow = (props) => {
     let { roomId } = useParams();
-    console.log(roomId);
+   // console.log(roomId);
     const [chatRoomName, setChatRoomName] = useState();
     const [chatUsers, setChatUsers] = useState([]);
     useEffect(() => {
@@ -27,7 +28,7 @@ export const ChatWindow = (props) => {
                 <ChatUsers primaryUsers={props.userName} otherUsers={chatUsers} />
             </div>
             <div className={classes.chatWindowChatter}>
-
+                <ChatWindowForUsers roomId={roomId} />
             </div>
 
         </div>
