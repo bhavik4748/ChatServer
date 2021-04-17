@@ -6,7 +6,7 @@
 }
 
 .FixedLeftPanel {
-    width: 300px;
+    width: 335px;
     height: 100vh;
     color: white;
     background-color: #ff1940;
@@ -28,7 +28,7 @@
     display: flex;
     align-items: center;
     padding: 25px 20px;
-    /* justify-content: center; */
+    font-size: 18px;
 }
 
 .roomsTab:hover {

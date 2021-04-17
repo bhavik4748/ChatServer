@@ -6,14 +6,14 @@
 }
 
 .chatMessagesWindow {
-    height: 80%;
+    height: 85%;
     min-height: 100px;
     overflow: auto;
     padding: 5px 0;
 }
 
 .chatTextEnterWindow {
-    height: 20%;
+    height: 15%;
     min-height: 80px;
     display: flex;
     align-items: center;
