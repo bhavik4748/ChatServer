@@ -1,14 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../../../services/api';
+import { AlwaysScrollToBottom } from '../../../../services/shared';
 
 import classes from './chatWindowForUsers.module.css';
-
-const AlwaysScrollToBottom = () => {
-    const elementRef = useRef();
-    useEffect(() => elementRef.current.scrollIntoView());
-    return <div ref={elementRef} />;
-};
-
 
 export const ChatWindowForUsers = (props) => {
     const [messages, setMessages] = useState([]);
@@ -44,7 +38,7 @@ export const ChatWindowForUsers = (props) => {
 
 
     let userTextBox = (
-        <form>
+        <form className={classes.form}>
             <div className={classes.textArea}>
                 <textarea placeholder="Type a message..."></textarea>
             </div>

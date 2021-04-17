@@ -45,7 +45,7 @@
     color: #696969;
 }
 
-form {
+.form {
     display: flex;
     align-items: center;
     width: 100%;

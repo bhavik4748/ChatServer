@@ -8,7 +8,7 @@ api.headers = {
 }
 
 api.postHeaders={
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
     'Accept': 'application/json',
     'method':'POST'
 }
