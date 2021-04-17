@@ -25,10 +25,10 @@ export const ChatWindow = (props) => {
                 <div className={classes.roomName}>
                     {chatRoomName}
                 </div>
-                <ChatUsers primaryUsers={props.userName} otherUsers={chatUsers} />
+                <ChatUsers primaryUser={props.userName} otherUsers={chatUsers} />
             </div>
             <div className={classes.chatWindowChatter}>
-                <ChatWindowForUsers roomId={roomId} />
+                <ChatWindowForUsers primaryUser={props.userName} roomId={roomId} />
             </div>
 
         </div>

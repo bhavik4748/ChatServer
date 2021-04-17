@@ -7,8 +7,6 @@ import {
 
 import { Login } from './components/login/login';
 import { Chat } from './components/chat/chat';
-
-
 import './App.css';
 
 function App() {
@@ -23,7 +21,7 @@ function App() {
       history.push('/chat');
       return;
     }
-    
+
   }
 
   const changeHandler = (event) => {
@@ -36,6 +34,12 @@ function App() {
     </form>
   )
 
+  let chatComponent = login;
+  if (loginUser) {
+    chatComponent = <Chat user={loginUser} />
+  }
+
+
   return (
     <div className="App">
       <Switch>
@@ -43,7 +47,7 @@ function App() {
           {login}
         </Route>
         <Route path="/chat">
-          <Chat user={loginUser} />
+          {chatComponent}
         </Route>
         <Route path="*">
           {login}

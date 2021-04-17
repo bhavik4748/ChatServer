@@ -3,14 +3,19 @@ const api = {}
 api.url = "http://localhost:8080/api/";
 
 api.headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
+    'headers': {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/vnd.guidepoint.app+json'
+    },
+    'method': 'GET'
 }
 
-api.postHeaders={
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Accept': 'application/json',
-    'method':'POST'
+api.postHeaders = {
+    'headers': {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/vnd.guidepoint.app+json'
+    },
+    'method': 'POST'
 }
 
 api.getRooms = async () => {
@@ -28,7 +33,6 @@ api.getRoomDetails = async (id) => {
     try {
         const res = await fetch(`${api.url}rooms/${id}`, api.headers);
         const result = await res.json();
-      //  api.postRoomMessages();
         return result;
     } catch (err) {
         console.log(err);
@@ -48,23 +52,19 @@ api.getRoomMessages = async (id) => {
     }
 }
 
-api.postRoomMessages = async () => {
+api.postRoomMessages = async (roomId, user, message) => {
     try {
-        let obj = {};
-        obj['name']='aaaa';
-        obj['message']= 'this is test message';
-        api.postHeaders['body']= JSON.stringify(obj);
-        const res = await fetch(`${api.url}rooms/0/messages`, api.postHeaders);
+        let data = new URLSearchParams();
+        data.append('name', user);
+        data.append('message', message);
+        api.postHeaders['body'] = data;
+        const res = await fetch(`${api.url}rooms/${roomId}/messages`, api.postHeaders);
         const result = await res.json();
-      //  console.log('post', result);
         return result;
     } catch (err) {
-        console.log(err);
-      //  console.log('post', err);
+        console.error(err);
         throw (err);
     }
 }
-
-
 
 export default api;
