@@ -1,6 +1,10 @@
 import classes from './chatUsers.module.css';
 export const ChatUsers = (props) => {
-    let otherUsers = props.otherUsers.join(', ');
+    const usersNotPrimary = [...props.otherUsers];
+    let ind = usersNotPrimary.indexOf(props.primaryUser);
+    if (ind > -1)
+        usersNotPrimary.splice(ind, 1);
+    let otherUsers = usersNotPrimary.join(', ');
     return (
         <div className={classes.UserContainer}>
             <div className={classes.PrimaryUser} >{props.primaryUser}</div>
