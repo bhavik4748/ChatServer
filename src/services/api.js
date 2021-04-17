@@ -56,11 +56,11 @@ api.postRoomMessages = async () => {
         api.postHeaders['body']= JSON.stringify(obj);
         const res = await fetch(`${api.url}rooms/0/messages`, api.postHeaders);
         const result = await res.json();
-        console.log('post', result);
+      //  console.log('post', result);
         return result;
     } catch (err) {
         console.log(err);
-        console.log('post', err);
+      //  console.log('post', err);
         throw (err);
     }
 }

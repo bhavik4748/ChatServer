@@ -6,11 +6,11 @@ import classes from './chatWindowForUsers.module.css';
 export const ChatWindowForUsers = (props) => {
     const [messages, setMessages] = useState([]);
     let userChatBox = null;
-    console.log('aaaaa', props.roomId);
+  //  console.log('aaaaa', props.roomId);
     useEffect(() => {
         async function getRoomMessages(id) {
             const msg = await api.getRoomMessages(id);
-            console.log({ msg })
+         //   console.log({ msg })
             setMessages(msg);
         }
         getRoomMessages(props.roomId);
@@ -19,7 +19,7 @@ export const ChatWindowForUsers = (props) => {
 
     if (messages.length > 0)
         userChatBox = messages.map(x => {
-            return (<div className={classes.msgBox}>
+            return (<div key={x.id} className={classes.msgBox}>
                 <div className={classes.msg}>{x.message}  </div>
                 <div className={classes.msgUser}>{x.name}</div>
             </div>
