@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import { Login } from './components/login/login';
-import { Chat } from './components/chat/chat';
+import { ChatContainer } from './components/chat/chatContainer';
 import './App.css';
 
 function App() {
@@ -21,7 +21,6 @@ function App() {
       history.push('/chat');
       return;
     }
-
   }
 
   const changeHandler = (event) => {
@@ -36,7 +35,7 @@ function App() {
 
   let chatComponent = login;
   if (loginUser) {
-    chatComponent = <Chat user={loginUser} />
+    chatComponent = <ChatContainer user={loginUser} />
   }
 
 

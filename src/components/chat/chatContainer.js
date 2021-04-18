@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Switch, useRouteMatch, Route, NavLink } from 'react-router-dom';
 
-import { UserStatus } from './userStatus/userStatus';
-//import { Rooms } from '../rooms/rooms';
-import { ChatWindow } from './chatWindow/chatWindow';
 import api from '../../services/api';
-import classes from './chat.module.css';
+import { UserStatus } from './userStatus/userStatus';
+import { ChatWindow } from './chatWindow/chatWindow';
 
-export const Chat = (props) => {
+import classes from './chatContainer.module.css';
+
+export const ChatContainer = (props) => {
     let { path, url } = useRouteMatch();
     const [rooms, setRooms] = useState([]);
     useEffect(() => {
@@ -29,8 +29,8 @@ export const Chat = (props) => {
     })
 
     return (
-        <div className={classes.ChatMainLayout}>
-            <div className={classes.FixedLeftPanel} >
+        <div className={classes.chatMainLayout}>
+            <div className={classes.fixedLeftPanel} >
                 <UserStatus userName={props.user} />
                 {roomsDiv}
             </div>

@@ -1,25 +1,17 @@
-.ChatMainLayout {
+.chatMainLayout {
     width: 100vw;
     height: 100vh;
     display: flex;
     position: relative;
 }
 
-.FixedLeftPanel {
+.fixedLeftPanel {
     width: 335px;
     height: 100vh;
     color: white;
     background-color: #ff1940;
-
 }
 
-.ChatWindow {
-    height: 100vh;
-    color: #696969;
-    background-color: white;
-    width: 100%;
-    padding: 25px 20px;
-}
 
 .roomsTab {
     color: white;
@@ -43,8 +35,4 @@
     padding: 20px;
     color: #696969;
     font-size: 20px;
-}
-
-a {
-    text-decoration: none;
 }
