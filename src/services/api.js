@@ -24,7 +24,7 @@ api.getRooms = async () => {
         const result = await res.json();
         return result;
     } catch (err) {
-        console.log(err);
+        console.error(err);
         throw (err);
     }
 }
@@ -35,7 +35,7 @@ api.getRoomDetails = async (id) => {
         const result = await res.json();
         return result;
     } catch (err) {
-        console.log(err);
+        console.error(err);
         throw (err);
     }
 }
@@ -47,7 +47,7 @@ api.getRoomMessages = async (id) => {
         const result = await res.json();
         return result;
     } catch (err) {
-        console.log(err);
+        console.error(err);
         throw (err);
     }
 }

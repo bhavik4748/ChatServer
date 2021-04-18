@@ -12,8 +12,12 @@ export const ChatContainer = (props) => {
     const [rooms, setRooms] = useState([]);
     useEffect(() => {
         async function getRooms() {
-            const roomData = await api.getRooms();
-            setRooms(roomData);
+            try{
+                const roomData = await api.getRooms();
+                setRooms(roomData);
+            }catch(err){
+                console.err('Something went wrong')
+            }
         }
         getRooms();
     }, [setRooms]);

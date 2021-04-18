@@ -8,7 +8,6 @@ import classes from './chatRoom.module.css';
 
 export const ChatRoom = (props) => {
     let { roomId } = useParams();
-   // console.log(roomId);
     const [chatRoomName, setChatRoomName] = useState();
     const [chatUsers, setChatUsers] = useState([]);
     useEffect(() => {
