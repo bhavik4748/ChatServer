@@ -30,9 +30,10 @@
 .selectRoom {
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
     color: #696969;
-    font-size: 20px;
+    margin: 10vh;
+    font-size: 24px;
 }

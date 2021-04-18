@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import { Login } from './components/login/login';
-import { ChatContainer } from './components/chat/chatContainer';
+import { ChatContainer } from './components/chatContainer/chatContainer';
 import './App.css';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
     setEnteredUser(event.target.value);
   }
 
-  let login = (
+  const login = (
     <form onSubmit={LoginHandler}>
       <Login inputVal={enteredUser} changed={(event) => changeHandler(event)} />
     </form>

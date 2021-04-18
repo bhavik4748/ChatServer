@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import { ChatUsers } from './chatUsers/chatUsers';
 import { ChatWindowForUsers } from './chatWindowForUsers/chatWindowForUsers';
 import api from '../../../services/api';
-import classes from './chatWindow.module.css';
+import classes from './chatRoom.module.css';
 
-export const ChatWindow = (props) => {
+export const ChatRoom = (props) => {
     let { roomId } = useParams();
    // console.log(roomId);
     const [chatRoomName, setChatRoomName] = useState();

@@ -8,10 +8,13 @@ export const UserStatus = (props) => {
         setTimeElapsed(timeElapsed => timeElapsed + 1);
     }, 60 * 1000);
 
+    let minutesVar = 'minute';
+    if (timeElapsed > 1)
+        minutesVar = 'minutes'
     return (
         <div className={classes.userHeader}>
             <div className={classes.userLabel}>{props.userName}</div>
-            <div className={classes.statusLabel}> Online for {timeElapsed} minutes </div>
+            <div className={classes.statusLabel}> Online for {timeElapsed} {minutesVar} </div>
         </div>
     )
 }

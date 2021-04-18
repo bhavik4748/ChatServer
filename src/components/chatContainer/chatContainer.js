@@ -3,7 +3,7 @@ import { Switch, useRouteMatch, Route, NavLink } from 'react-router-dom';
 
 import api from '../../services/api';
 import { UserStatus } from './userStatus/userStatus';
-import { ChatWindow } from './chatWindow/chatWindow';
+import { ChatRoom } from './chatRoom/chatRoom';
 
 import classes from './chatContainer.module.css';
 
@@ -39,7 +39,7 @@ export const ChatContainer = (props) => {
                     <div className={classes.selectRoom}>Please select a chat room.</div>
                 </Route>
                 <Route path={`${path}/:roomId`}>
-                    <ChatWindow userName={props.user} />
+                    <ChatRoom userName={props.user} />
                 </Route>
             </Switch>
         </div>
