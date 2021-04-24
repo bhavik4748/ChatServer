@@ -5,7 +5,6 @@ api.url = "http://localhost:8080/api/";
 api.headers = {
     'headers': {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/vnd.guidepoint.app+json'
     },
     'method': 'GET'
 }
@@ -13,7 +12,6 @@ api.headers = {
 api.postHeaders = {
     'headers': {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/vnd.guidepoint.app+json'
     },
     'method': 'POST'
 }

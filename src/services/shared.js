@@ -22,6 +22,6 @@ export const useInterval = (callback, delay) => {
 
 export const AlwaysScrollToBottom = () => {
     const elementRef = useRef();
-    useEffect(() => elementRef.current.scrollIntoView());
+    useEffect(() => elementRef.current.scrollIntoView({ behavior: "smooth" }));
     return <div ref={elementRef} />;
 };

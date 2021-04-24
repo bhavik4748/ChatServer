@@ -1,12 +1,19 @@
 import { useState } from 'react';
-import { useInterval } from '../../../services/shared'
+import {useEffect} from 'react';
 import classes from './userStatus.module.css';
 
 export const UserStatus = (props) => {
     const [timeElapsed, setTimeElapsed] = useState(0);
-    useInterval(() => {
-        setTimeElapsed(timeElapsed => timeElapsed + 1);
-    }, 60 * 1000);
+
+    const changeTime=()=>{
+        setTimeElapsed(timeElapsed + 1);
+    }
+    useEffect(() => {
+        const tick = setInterval(() => {
+            changeTime()
+        }, 60 * 1000)
+        return () => clearInterval(tick)
+    })
 
     let minutesVar = 'minute';
     if (timeElapsed > 1)

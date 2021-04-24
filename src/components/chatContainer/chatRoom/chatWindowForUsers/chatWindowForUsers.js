@@ -24,8 +24,9 @@ export const ChatWindowForUsers = (props) => {
 
     if (messages.length > 0) {
         userChatBox = messages.map(x => {
-            return (<div key={x.id}
-                className={`${classes.msgBox} ${props.primaryUser === x.name ? classes.primaryUser : ""}    `}>
+            return (
+            <div key={x.id}
+                className={`${classes.msgBox} ${props.primaryUser === x.name ? classes.primaryUser : ""}`}>
                 <div className={classes.msg}>{x.message}  </div>
                 <div className={classes.msgUser}>{x.name}</div>
             </div>
